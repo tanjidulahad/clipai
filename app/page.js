@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
+    <div className="mt-20">
       <section className="text-center pt-10">
         <Link href={"#"} className="bg-gray-100 p-1 inline-flex justify-between items-center rounded-full mb-7 hover:bg-gray-200">
           <Badge>New</Badge>
@@ -21,7 +21,7 @@ export default function Home() {
         </div>
         <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36 mb-14 mt-8">
           <span className="font-semibold text-gray-400 uppercase">FEATURED IN</span>
-          <div className="flex justify-between mt-8">
+          <div className="flex flex-wrap gap-3 justify-center sm:justify-between mt-8">
             <Image src={"/youtube.svg"} width={150} height={30} ></Image>
             <Image src={"/product.svg"} width={220} height={30}></Image>
             <Image src={"/redit.svg"} width={150} height={30}></Image>
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-12 text-center">
-          <Link href="/sign-in" className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400">Get Started Today</Link>
+          <Link href="/dashboard" className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400">Get Started Today</Link>
         </div>
       </section>
     </div>
