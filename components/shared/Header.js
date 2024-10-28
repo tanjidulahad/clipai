@@ -6,7 +6,7 @@ import { UserButton } from '@clerk/nextjs';
 
 const Header = () => {
     return (
-        <div className={`px-5 flex justify-between backdrop-blur-sm bg-white/30 fixed w-full top-0 transition-all shadow-sm duration-300 p-3`}>
+        <div className={`px-5 flex justify-between z-10 fixed w-full top-0 transition-all shadow-sm duration-300 p-3 bg-white/3 backdrop-blur-sm`}>
             <Link href={'/'} >
             <div className='flex gap-2 items-center'>
                 <Image src={"/logo.svg"} alt='logo' width={30} height={30}></Image>

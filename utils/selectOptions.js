@@ -32,14 +32,14 @@ export const contentType = [
 export const duration=[
     {
         label: "15 seconds",
-        value:15
+        value:"15 seconds"
     },
     {
         label: "20 seconds",
-        value:20
+        value:"20 seconds"
     },
     {
         label: "30 seconds",
-        value:30
+        value:"30 seconds"
     },
 ]

@@ -15,6 +15,7 @@ const Provider = ({ children }) => {
             <div>
                 {children}
             </div>
+            
         </div>
     );
 };

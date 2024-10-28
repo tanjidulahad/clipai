@@ -19,7 +19,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function Select({placeholder,options}) {
+export function Select({title,placeholder,options,onOptionChanged,resetCustomPrompt}) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
@@ -48,6 +48,8 @@ export function Select({placeholder,options}) {
                   value={framework.value}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue)
+                    onOptionChanged(title,currentValue === value ? "" : currentValue)
+                    title=="topic"&&resetCustomPrompt("")
                     setOpen(false)
                   }}
                 >
