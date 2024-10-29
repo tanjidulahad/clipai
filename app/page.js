@@ -14,8 +14,8 @@ export default function Home() {
             <span><ChevronRight size={18} /></span>
           </div>
         </Link>
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Build Your Short Video <span className="text-primary">With AI</span> </h1>
-        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">EEffortlessly Build AI-Generated Short Videos in Minutes</p>
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Build Your Short Video Prompt <span className="text-primary">With AI</span> </h1>
+        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">EEffortlessly Build AI-Generated Short Video Prompts in Minutes</p>
         <div>
           <Link href={"/dashboard"} className="inline-flex bg-primary text-white px-5 py-3 rounded-md mb-8">Get Started <span><ArrowRight size={24} /></span></Link>
         </div>
