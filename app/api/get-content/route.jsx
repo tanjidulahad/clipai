@@ -1,8 +1,5 @@
 import UserContent from "@/Model/usersContent"
-import connectDB from "@/utils/connectDB"
 import { NextResponse } from "next/server"
-
-await connectDB()
 
 export async function GET(req){
 
