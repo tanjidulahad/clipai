@@ -10,11 +10,13 @@ import { useToast } from '@/hooks/use-toast';
 import axios from 'axios';
 import AlertDialogue from './_components/alertDialogue';
 import { useUser } from '@clerk/nextjs';
+import { useCredit } from '@/app/provider';
 
 
 
 const CreateNew = () => {
   const { user } = useUser()
+  const{credit,setCredit}=useCredit()
   const [userSelection, setUserSelection] = useState({ topic: '', imagetype: '', duration: '' })
   const [customPromptVal, setCustomPromptVal] = useState("")
   const { toast } = useToast()
@@ -52,16 +54,9 @@ const CreateNew = () => {
     const topic = userSelection.topic == "custom_prompt" ? customPromptVal : userSelection.topic
 
     const prompt = "write a script to generate " + userSelection.duration + " video on topic : " + topic + " along with AI image prompt in " + userSelection.imagetype + " format for each scene. Also generate a Title and a short description and give me result in JSON fromat with title, description, imagePrompt and ContentText as field, No Plain text."
-    console.log(prompt)
-    console.log(user?.primaryEmailAddress?.emailAddress)
+
 
     generateScript(prompt)
-    // saveToDb("tanjidulahad@gmail.com",result)
-
-    // setIsLoading(true)
-    // setTimeout(()=>{
-    //     setIsLoading(false)
-    // },2000)
 
   }
 
@@ -92,9 +87,18 @@ const CreateNew = () => {
         title: "Successful",
         description: "Your prompt is ready. Go to dashboard to see your content",
       })
+      setCredit(prev=>prev-10)
+      updateCredit(email)
     }).catch(e=>{
       setIsLoading(false)
     })
+  }
+
+  const updateCredit=(email)=>{
+    axios.patch("/api/update-credit",{
+      email
+    }).then()
+    .catch(e=>console.log(e))
   }
 
 
@@ -113,7 +117,7 @@ const CreateNew = () => {
           <OptionSelector title="Duration" subtitle="Select the duration of your video">
             <Select placeholder="Select Duration" title="duration" options={duration} onOptionChanged={onUserSelect} />
           </OptionSelector>
-          <Button onClick={handleCreateShortVideo} className='w-full mt-6'>Create short video</Button>
+          <Button onClick={handleCreateShortVideo} className='w-full mt-6' disabled={credit==0}>Create short video</Button>
         </div>
       </section>
       <AlertDialogue isLoading={isLoading} />

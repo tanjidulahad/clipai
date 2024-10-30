@@ -12,7 +12,7 @@ module.exports = {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			primary: {
-  				DEFAULT: '#8338ec',
+  				DEFAULT: '#C62E2E',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			card: {

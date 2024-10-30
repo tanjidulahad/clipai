@@ -11,12 +11,12 @@ import {
 
 const ContetnCard = ({data,setCurrentContent}) => {
     return (
-        <Card>
+        <Card className="h-full flex flex-col justify-between">
             <CardHeader>
                 <CardTitle>{data.title}</CardTitle>
                 <CardDescription>{data.description}</CardDescription>
             </CardHeader>
-            <CardFooter>
+            <CardFooter >
                 <Button onClick={()=>setCurrentContent(data)}>View your prompt</Button>
             </CardFooter>
         </Card>
