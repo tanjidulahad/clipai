@@ -4,7 +4,7 @@ import Header from "@/components/shared/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import Provider from "./provider";
 import { Toaster } from "@/components/ui/toaster"
-import connectDB from "@/utils/connectDB";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,7 +22,6 @@ export const metadata = {
   description: "Generate Ai powered short video with ease.",
 };
 
-await connectDB()
 
 export default function RootLayout({ children }) {
   return (
