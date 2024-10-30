@@ -7,19 +7,21 @@ import ContetnCard from './_components/contentCard';
 import ContentDetails from './_components/contentDetails';
 import SkeletonLoader from './_components/skelitonLoader';
 import { toast } from '@/hooks/use-toast';
+import { useUser } from '@clerk/nextjs';
 
 const Page = () => {
     const [contents, setContents] = useState([])
     const [currentContent,setCurrentContent]=useState({})
     const [isContentFetchin,setIsContentFetching]=useState(false)
+    const {user}=useUser()
 
     useEffect(() => {
-        getContent()
-    }, [])
+        user&&getContent()
+    }, [user])
 
     const getContent = async () => {
         setIsContentFetching(true)
-        axios.get("/api/get-content")
+        axios.get(`/api/get-content?email=${user?.primaryEmailAddress?.emailAddress}`)
             .then(res => {
                 setContents(res?.data?.data)
                 setIsContentFetching(false)
